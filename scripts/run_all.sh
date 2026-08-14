@@ -11,3 +11,4 @@ python3 scripts/build_db.py
 python3 scripts/run_pipeline.py
 python3 scripts/run_validation.py
 python3 scripts/reconcile.py
+python3 scripts/export_for_stata.py

@@ -7,16 +7,14 @@ set more off
 log using "logs/age_earnings_CPS2015.log", replace
 
 // 1. Load Data
-use "data/raw/CPS2015.dta", clear
+// Ingestion, filtering, and feature engineering (ln_ahe, age2, ln_age) now
+// happen in SQL -- see sql/. Run ./scripts/run_all.sh first to build this
+// file from data/raw/CPS2015.dta; this do-file only reads the result.
+use "data/analysis/cps_2015_analysis.dta", clear
 
-// 2. Initial Data Audit & Feature Engineering
+// 2. Initial Data Audit
 summarize ahe age
 inspect ahe age
-
-// Feature engineering: log wage, quadratic age, and interaction term
-gen ln_ahe = log(ahe)
-gen age2  = age^2
-// No need to generate manual interaction for factors – use i.female#i.bachelor in regression
 
 tab bachelor, missing
 // tabulate bachelor as data quality check
@@ -38,7 +36,7 @@ regress ln_ahe age age2 i.female i.bachelor i.female#i.bachelor, robust
 est store ols_quad_inter
 
 // 6. Log-Log (Semi-Elasticity, % effect)
-gen ln_age = log(age)
+// ln_age comes precomputed from the SQL pipeline (sql/pipeline/02_recode_analysis_variables.sql)
 regress ln_ahe ln_age i.female i.bachelor, robust
 est store ols_loglog
 

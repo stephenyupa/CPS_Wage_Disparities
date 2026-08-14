@@ -32,6 +32,7 @@ Individual steps, if you want to run or read them one at a time:
 | 3 | `sql/pipeline/02_recode_analysis_variables.sql` | Adds `ln_ahe`, `age2`, `ln_age`. Produces `cps_2015_analysis` -- the table Stata should `use`. |
 | 4 | `sql/validation/01-04_*.sql` | Row counts vs. source, duplicate-record check, null counts, out-of-range flags. Run via `scripts/run_validation.py`. |
 | 5 | `sql/reconciliation/01_sql_summary_stats.sql` | Key summary stats from the SQL table, compared against the same stats computed independently from the raw `.dta` in `scripts/reconcile.py`. |
+| 6 | `scripts/export_for_stata.py` | Exports `cps_2015_analysis` to `data/analysis/cps_2015_analysis.dta` -- the only file `do/age_earnings_CPS2015.do` reads. Everything upstream of this step happens in SQL. |
 
 ## Known limitations (read before trusting the validation output)
 
