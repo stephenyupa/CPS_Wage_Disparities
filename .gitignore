@@ -2,3 +2,6 @@ logs/
 output/
 *.log
 .DS_Store
+db/*.db
+__pycache__/
+*.pyc
