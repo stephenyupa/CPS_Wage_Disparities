@@ -34,13 +34,13 @@ II. DATA AND METHODOLOGY
 
 III. FINDINGS
 
-8. Age. In the baseline specification, each additional year of age is associated with a 2.42% increase in hourly earnings (coefficient 0.0242, SE 0.0020, p<0.001; Exhibit 1, column 1–2). This effect is stable across the robust-SE specification.
+8. Age. In the baseline specification, each additional year of age is associated with a 2.42% increase in hourly earnings (coefficient 0.0242, SE 0.0020, p<0.001; Exhibit 1, columns 1–2). This effect is stable across the robust-SE specification.
 
-9. Gender. Holding age and education constant, women earn approximately 17.8% less than men (coefficient −0.178, SE 0.012, p<0.001; Exhibit 1, columns 1–4). The gap is estimated at −0.190 (SE 0.016) in the interaction specification and is materially unchanged by the addition of a quadratic age term.
+9. Gender. Holding age and education constant, women earn approximately 17.8% less than men (coefficient −0.178, SE 0.012, p<0.001; Exhibit 1, columns 1, 2, and 4). The gap is estimated at −0.190 (SE 0.016) in the interaction specification (Exhibit 1, column 3) and is materially unchanged by the addition of a quadratic age term.
 
-10. Education. Holding a bachelor's degree is associated with 46.2% higher earnings relative to a high school diploma (coefficient 0.462, SE 0.012, p<0.001; Exhibit 1, columns 1–2), the largest single effect in the model.
+10. Education. Holding a bachelor's degree is associated with 46.2% higher earnings relative to a high school diploma (coefficient 0.462 [0.4615 unrounded], SE 0.011, p<0.001; Exhibit 1, columns 1–2), the largest single effect in the model.
 
-11. Nonlinearity in age. Adding a quadratic term (Exhibit 1, column 3) yields a positive linear age coefficient (0.135, SE 0.046, p=0.003) and a negative, statistically significant quadratic term (−0.00187, SE 0.00077, p=0.016). This indicates earnings rise with age within this 25–34 cohort but at a diminishing rate, consistent with a concave human-capital accumulation profile rather than a constant-return age effect.
+11. Nonlinearity in age. Adding a quadratic term (Exhibit 1, column 3) yields a positive linear age coefficient (0.135, SE 0.046, p=0.003) and a negative, statistically significant quadratic term (−0.00187, SE 0.00077, p=0.015). This indicates earnings rise with age within this 25–34 cohort but at a diminishing rate, consistent with a concave human-capital accumulation profile rather than a constant-return age effect.
 
 12. Gender × education interaction. The female × bachelor's interaction coefficient is 0.0235 (SE 0.0229) and is not statistically distinguishable from zero at conventional levels. The data therefore do not support a claim that the bachelor's-degree wage premium differs by gender within this sample; the degree premium and the gender gap appear approximately additive rather than interactive.
 
@@ -50,7 +50,7 @@ IV. ROBUSTNESS, DIAGNOSTICS, AND LIMITATIONS
 
 14. Heteroskedasticity. Both the Breusch-Pagan test (χ²(1) = 39.35, p<0.001) and White's test (χ²(7) = 41.45, p<0.001) reject the null of constant error variance. Accordingly, all reported inference relies on heteroskedasticity-robust (White) standard errors rather than the conventional-SE baseline; this is a data-driven choice, not a default.
 
-15. Multicollinearity. Variance inflation factors in the quadratic specification are elevated for `age` and `age²` (VIF ≈ 541 each; Exhibit 1 diagnostics, `logs/age_earnings_CPS2015.log`). This is the expected mechanical consequence of including a variable and its square and does not indicate a specification error; it does, however, mean the individual linear- and quadratic-age coefficients should not be interpreted in isolation from one another — the marginal effect of age (Section III, ¶11; see `margins`/`marginsplot` output) is the more reliable quantity for interpretation. VIFs for the gender, education, and interaction terms are low (1.7–3.2) and unremarkable.
+15. Multicollinearity. Variance inflation factors in the quadratic specification are elevated for `age` and `age²` (VIF 540.7 and 540.7 respectively; Exhibit 5, `estat vif` output in `logs/age_earnings_CPS2015.log`). This is the expected mechanical consequence of including a variable and its square and does not indicate a specification error; it does, however, mean the individual linear- and quadratic-age coefficients should not be interpreted in isolation from one another — the marginal effect of age (Section III, ¶11; see `margins`/`marginsplot` output) is the more reliable quantity for interpretation. VIFs for the gender, education, and interaction terms are low (1.72–3.24) and unremarkable.
 
 16. External validity. The sample is limited to full-time, full-year workers ages 25–34 with a high school diploma or bachelor's degree in a single survey month (March 2015). Findings should not be extrapolated to other age ranges, educational categories (e.g., graduate degrees, some college), part-time workers, or later periods without re-estimation on appropriate data.
 
