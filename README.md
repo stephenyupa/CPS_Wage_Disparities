@@ -91,6 +91,11 @@ statistically distinguishable from zero (coefficient 0.0235, SE 0.023,
 p = 0.31) — no strong evidence in this sample that the college premium
 differs by gender.
 
+A longer write-up of these findings, methodology, and caveats —
+formatted as a numbered-paragraph brief with exhibit references, the
+convention used for expert-report exhibits — is in
+[docs/technical_brief.md](docs/technical_brief.md).
+
 ## Limitations
 
 This is a cross-sectional OLS regression on four variables, and it
@@ -162,10 +167,12 @@ CPS_Wage_Disparities/
 │   ├── export_for_stata.py                    # SQLite -> data/analysis/*.dta
 │   ├── regress_baseline.py                    # reproduces the headline regression
 │   └── run_all.sh                             # runs all of the above, in order
-└── do/
-    ├── age_earnings_CPS2015.do                # main analysis, reads data/analysis/
-    ├── 01_dataprep.do                         # earlier, now-superseded prep script
-    ├── 02_eda.do
-    ├── 03_regression.do
-    └── 04_reporting.do
+├── do/
+│   ├── age_earnings_CPS2015.do                # main analysis, reads data/analysis/
+│   ├── 01_dataprep.do                         # earlier, now-superseded prep script
+│   ├── 02_eda.do
+│   ├── 03_regression.do
+│   └── 04_reporting.do
+└── docs/
+    └── technical_brief.md                     # findings write-up, expert-report-exhibit format
 ```
